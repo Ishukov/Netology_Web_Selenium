@@ -48,9 +48,6 @@ public class SeleniumTest {
 
     @Test
     void shouldNameInputInvalidWithEmptyFields() {
-
-        driver.findElement(By.cssSelector("[data-test-id = 'name'] input")).sendKeys("");
-        driver.findElement(By.cssSelector("[data-test-id = 'phone'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[type = 'button']")).click();
 
         String expected = "Поле обязательно для заполнения";
@@ -61,9 +58,6 @@ public class SeleniumTest {
 
     @Test
     void shouldPhoneInputInvalidWithEmptyFields() {
-
-        driver.findElement(By.cssSelector("[data-test-id = 'name'] input")).sendKeys("");
-        driver.findElement(By.cssSelector("[data-test-id = 'phone'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[type = 'button']")).click();
 
         String expected = "Поле обязательно для заполнения";
@@ -76,8 +70,6 @@ public class SeleniumTest {
     void shouldCheckboxInputInvalidWithEmptyFields() {
         String expected = driver.findElement(By.cssSelector("[data-test-id='agreement']")).getCssValue("color");
 
-        driver.findElement(By.cssSelector("[data-test-id = 'name'] input")).sendKeys("");
-        driver.findElement(By.cssSelector("[data-test-id = 'phone'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[type = 'button']")).click();
 
         String actual = driver.findElement(By.cssSelector("[data-test-id='agreement'].input_invalid")).getCssValue("color");
